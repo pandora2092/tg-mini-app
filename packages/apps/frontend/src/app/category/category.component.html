@@ -1,0 +1,65 @@
+<section>
+    <header>
+        <lib-header></lib-header>
+    </header>
+    <div class="event-wrapper">
+        <h5>События в категории «{{category}}» в г. {{currentCuty}}</h5>
+
+        <div class="filter_data">
+            <div *ngFor="let item of list" 
+                [class.is-chosen]="item.isChosen" 
+                (click)="chosenItem(item)"
+                >
+                <p (click)="item.func()">{{ item.name | capitalizeFirst}}</p>
+            </div>
+            <div class="range_data">
+                <form>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Выберите дату</mat-label>
+                        <mat-date-range-input [rangePicker]="picker">
+                            <input matStartDate placeholder="Начало" (dateChange)="onDateChangeStart($event)" >
+                            <input matEndDate placeholder="Конец"  (dateChange)="onDateChangeEnd($event)">
+                        </mat-date-range-input>
+                        
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+
+                    </mat-form-field>
+                </form>
+            </div>
+        </div>
+
+       
+        <div class="loader_wrapper">
+            <mat-spinner *ngIf="isLoading" [diameter]="35"></mat-spinner>
+        </div>
+        
+
+        <div *ngIf="!isLoading">
+            <mat-card class="event-card" appearance="outlined" *ngFor="let event of events()">
+                <img mat-card-image [src]="event.images[0].image" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <h4>{{event.title}}</h4>
+                    <code>{{event.description | trim}}</code>
+                    <div class="price_wrapper">
+                        <fa-icon [icon]="faRouble"></fa-icon>
+                        <span  class="price">{{ event.price}}</span>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button matButton [routerLink]="[event.id]" class="button_more">{{ 'Подробнее' | uppercase}} </button>
+                </mat-card-actions>
+            </mat-card>
+
+            <mat-paginator 
+                [length]="countEvents"
+                [pageIndex]="page"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions"
+                aria-label="Select page"
+                (page)="onPageChange($event)">
+            </mat-paginator>
+        </div>
+        
+    </div>
+</section>

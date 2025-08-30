@@ -1,0 +1,27 @@
+{
+  "name": "interfaces",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/data-access/src",
+  "projectType": "library",
+  "tags": ["type:lib", "scope:shared", "lib-type:data-access"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/data-access",
+        "tsConfig": "libs/shared/data-access/tsconfig.lib.json",
+        "packageJson": "libs/shared/data-access/package.json",
+        "main": "libs/shared/data-access/src/index.ts",
+        "assets": ["libs/shared/data-access/*.md"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/shared/data-access/jest.config.ts"
+      }
+    }
+  }
+}

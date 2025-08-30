@@ -1,0 +1,17 @@
+/**
+ *  Import from angular.material
+ */
+//@import '~@angular/material/theming'; //устарело
+@use '@angular/material' as mat;
+
+/**
+ * Import from bootstrap
+ */
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+/**
+ * Override framework params => common params
+ */
+@import 'abstract';

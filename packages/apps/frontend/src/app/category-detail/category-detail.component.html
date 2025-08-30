@@ -1,0 +1,41 @@
+<section>
+    <header>
+        <lib-header></lib-header>
+    </header>
+    <div *ngIf="event">
+        <div class="event_header">
+            <img mat-card-lg-image [src]="event.images[0].image" alt="Photo of a Shiba Inu">
+            <section class="header_info">
+                <div class="converting-header__row">
+                    <h4>{{event.short_title}} 
+                        <span class="age-restriction">{{event.age_restriction}}</span>
+                    </h4>
+                   
+                </div>
+                
+                <div class="converting-header__row">
+                    <div class="data_info" >
+                        <span><fa-icon [icon]="faCalendarDay"></fa-icon></span>
+                        <div *ngFor="let data of event.dates">
+                           {{data.start | unixToFormat}} - {{data.end | unixToFormat}}
+                        </div>
+                    </div>
+                   
+
+                    <span class="converting-header__item">
+                        <fa-icon [icon]="faLocationDot"></fa-icon>
+                        {{info?.title}}
+                    </span>
+                    <span class="converting-header__item">
+                        <fa-icon [icon]="faRouble"></fa-icon>
+                        {{event.price}}
+                    </span>
+                    <!-- <span class="converting-header__item">{{event.favorites_count}}</span> -->
+                </div>
+            </section>
+        </div>
+    </div>
+    <div #containerEvent [innerHTML]="sanitizedHtml" class="event-wrapper"></div>
+        
+    
+</section>

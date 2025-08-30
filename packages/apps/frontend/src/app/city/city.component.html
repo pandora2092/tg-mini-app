@@ -1,0 +1,9 @@
+<section class="section">
+    <header>
+        <lib-header></lib-header>
+    </header>
+    <h4>Все события в г. {{city}} </h4>
+    <div *ngFor="let event of events()">
+        Название: {{event.title}}
+    </div>
+</section>

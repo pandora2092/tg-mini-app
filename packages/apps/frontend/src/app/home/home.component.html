@@ -1,0 +1,8 @@
+<section class="section">
+    <mat-card class="example-card m-4" appearance="outlined" *ngFor="let city of cities()" [routerLink]="city.slug">
+        <img mat-card-image [src]="city.image" alt="Photo of a Shiba Inu">
+        <mat-card-actions>
+          <button mat-button>{{city.name}}</button>
+        </mat-card-actions>
+      </mat-card>
+</section>

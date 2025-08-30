@@ -1,0 +1,91 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "scope:backend-api",
+                "onlyDependOnLibsWithTags": [
+                  "scope:backend-api",
+                  "type:lib",
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:frontend",
+                "onlyDependOnLibsWithTags": [
+                  "scope:frontend",
+                  "type:lib", 
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:admin",
+                "onlyDependOnLibsWithTags": [
+                  "scope:admin",
+                  "type:lib"
+                ]
+              },
+              {
+                "sourceTag": "lib-type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "lib-type:data-access",
+                  "lib-type:utils",
+                  "lib-type:feature",
+                  "lib-type:ui"
+                ]
+              },
+              {
+                "sourceTag": "lib-type:ui",
+                "onlyDependOnLibsWithTags": ["lib-type:ui", "lib-type:utils"]
+              },
+              {
+                "sourceTag": "lib-type:data-access",
+                "onlyDependOnLibsWithTags": [
+                  "lib-type:data-access",
+                  "lib-type:utils"
+                ]
+              },
+              {
+                "sourceTag": "lib-type:utils",
+                "onlyDependOnLibsWithTags": ["lib-type:utils"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {
+        "@typescript-eslint/no-extra-semi": "error",
+        "no-extra-semi": "off"
+      }
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {}
+    }
+  ]
+}
