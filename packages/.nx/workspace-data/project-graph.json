@@ -398,30 +398,18 @@
             "configurations": {}
           },
           "build": {
-            "options": {
-              "cwd": "apps/backend/api",
-              "args": [
-                "--node-env=production"
-              ],
-              "command": "webpack-cli build"
-            },
-            "cache": true,
-            "dependsOn": [
-              "^build"
-            ],
-            "inputs": [
-              "production",
-              "^production",
-              {
-                "externalDependencies": [
-                  "webpack-cli"
-                ]
-              }
-            ],
+            "executor": "@nx/webpack:webpack",
             "outputs": [
-              "{workspaceRoot}/dist/apps/backend/api"
+              "{options.outputPath}"
             ],
-            "executor": "nx:run-commands",
+            "options": {
+              "outputPath": "dist/apps/backend/api",
+              "main": "apps/backend/api/src/main.ts",
+              "tsConfig": "apps/backend/api/tsconfig.app.json",
+              "webpackConfig": "apps/backend/api/webpack.config.js",
+              "target": "node",
+              "compiler": "tsc"
+            },
             "configurations": {}
           },
           "serve": {
@@ -17144,6 +17132,11 @@
       {
         "source": "backend-api",
         "target": "npm:@nx/webpack",
+        "type": "static"
+      },
+      {
+        "source": "backend-api",
+        "target": "npm:webpack-node-externals",
         "type": "static"
       }
     ],
