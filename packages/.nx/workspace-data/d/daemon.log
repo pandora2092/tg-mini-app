@@ -15691,3 +15691,15 @@ Failed to process project graph. Run "nx reset" to fix this. Please report the i
 [NX Daemon Server] - 2025-08-31T11:36:29.287Z - [REQUEST]: dist/apps/backend/api/main.js,dist/apps/backend/api/assets/.gitkeep
 [NX Daemon Server] - 2025-08-31T11:36:29.287Z - [REQUEST]: 
 [NX Daemon Server] - 2025-08-31T11:36:29.488Z - Time taken for 'hash changed files from watcher' 1.0690820002928376ms
+[NX Daemon Server] - 2025-08-31T13:19:33.001Z - [WATCHER]: apps/frontend/src/app/environment.ts was modified
+[NX Daemon Server] - 2025-08-31T13:19:33.001Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-08-31T13:19:33.204Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-08-31T13:19:33.204Z - [REQUEST]: apps/frontend/src/app/environment.ts
+[NX Daemon Server] - 2025-08-31T13:19:33.204Z - [REQUEST]: 
+[NX Daemon Server] - 2025-08-31T13:19:33.648Z - Time taken for 'hash changed files from watcher' 1.1033099982887506ms
+[NX Daemon Server] - 2025-08-31T13:19:36.825Z - [WATCHER]: apps/frontend/src/app/environment.ts was modified
+[NX Daemon Server] - 2025-08-31T13:19:36.825Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-08-31T13:19:37.227Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-08-31T13:19:37.228Z - [REQUEST]: apps/frontend/src/app/environment.ts
+[NX Daemon Server] - 2025-08-31T13:19:37.228Z - [REQUEST]: 
+[NX Daemon Server] - 2025-08-31T13:19:37.423Z - Time taken for 'hash changed files from watcher' 1.0409450009465218ms
