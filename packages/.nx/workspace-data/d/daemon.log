@@ -15703,3 +15703,54 @@ Failed to process project graph. Run "nx reset" to fix this. Please report the i
 [NX Daemon Server] - 2025-08-31T13:19:37.228Z - [REQUEST]: apps/frontend/src/app/environment.ts
 [NX Daemon Server] - 2025-08-31T13:19:37.228Z - [REQUEST]: 
 [NX Daemon Server] - 2025-08-31T13:19:37.423Z - Time taken for 'hash changed files from watcher' 1.0409450009465218ms
+[NX Daemon Server] - 2025-08-31T13:21:54.216Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-08-31T13:21:54.217Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-08-31T13:21:54.218Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-08-31T13:21:54.220Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-08-31T13:21:54.220Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-08-31T13:21:54.224Z - Time taken for 'total for creating and serializing project graph' 0.28813400119543076ms
+[NX Daemon Server] - 2025-08-31T13:21:54.227Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-08-31T13:21:54.227Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 7.
+[NX Daemon Server] - 2025-08-31T13:21:54.279Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX Daemon Server] - 2025-08-31T13:21:54.280Z - Done responding to the client handleHashTasks
+[NX Daemon Server] - 2025-08-31T13:21:54.280Z - Handled HASH_TASKS. Handling time: 33. Response time: 1.
+[NX Daemon Server] - 2025-08-31T13:21:54.762Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-08-31T13:21:54.764Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-08-31T13:21:54.765Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-08-31T13:21:54.768Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-08-31T13:21:54.768Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-08-31T13:21:54.772Z - Time taken for 'total for creating and serializing project graph' 0.23156599886715412ms
+[NX Daemon Server] - 2025-08-31T13:21:54.775Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-08-31T13:21:54.775Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 7.
+[NX Daemon Server] - 2025-08-31T13:21:56.611Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 22 file(s) deleted
+[NX Daemon Server] - 2025-08-31T13:21:56.612Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-08-31T13:21:56.713Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-08-31T13:21:56.713Z - [REQUEST]: 
+[NX Daemon Server] - 2025-08-31T13:21:56.713Z - [REQUEST]: dist/apps/frontend/221.2cf153c67cfd3bd8.js,dist/apps/frontend/assets/nnv.jpg,dist/apps/frontend/assets/spb.jpg,dist/apps/frontend/polyfills.bb84103ddd2890cd.js,dist/apps/frontend/styles.250f8eff96ebc2f0.css,dist/apps/frontend/170.9096ad441186274c.js,dist/apps/frontend/assets/kzn.jpg,dist/apps/frontend/237.6715686fd760a1ac.js,dist/apps/frontend/runtime.64d2530fca5f8a61.js,dist/apps/frontend/favicon.ico,dist/apps/frontend/969.b925d2c0d6d2cf6d.js,dist/apps/frontend/8.18814c9c05537a47.js,dist/apps/frontend/assets/kzn.jpeg,dist/apps/frontend/assets/msk.jpg,dist/apps/frontend/3rdpartylicenses.txt,dist/apps/frontend/576.bae78066c501e227.js,dist/apps/frontend/assets/ekb.jpg,dist/apps/frontend/main.8cd12e36362352e3.js,dist/apps/frontend/index.html,dist/apps/frontend/904.bbc55ab2f0d21529.js,dist/apps/frontend/690.f9a0e64cade2e4e8.js,dist/apps/frontend/56.5f712a2f4946245d.js
+[NX Daemon Server] - 2025-08-31T13:21:56.885Z - Time taken for 'hash changed files from watcher' 0.3466260004788637ms
+[NX Daemon Server] - 2025-08-31T13:22:02.046Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-08-31T13:22:02.290Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-08-31T13:22:09.722Z - [WATCHER]: 14 file(s) created or restored, 0 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-08-31T13:22:09.722Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-08-31T13:22:09.825Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-08-31T13:22:09.825Z - [REQUEST]: dist/apps/frontend/576.141e1d9014130ff0.js,dist/apps/frontend/969.b925d2c0d6d2cf6d.js,dist/apps/frontend/221.2cf153c67cfd3bd8.js,dist/apps/frontend/3rdpartylicenses.txt,dist/apps/frontend/170.9096ad441186274c.js,dist/apps/frontend/8.18814c9c05537a47.js,dist/apps/frontend/main.8cd12e36362352e3.js,dist/apps/frontend/runtime.6f1db6d9d15f5f6c.js,dist/apps/frontend/styles.250f8eff96ebc2f0.css,dist/apps/frontend/237.6715686fd760a1ac.js,dist/apps/frontend/690.46882e5bc35234b7.js,dist/apps/frontend/904.bbc55ab2f0d21529.js,dist/apps/frontend/polyfills.bb84103ddd2890cd.js,dist/apps/frontend/56.882430995c057d97.js
+[NX Daemon Server] - 2025-08-31T13:22:09.825Z - [REQUEST]: 
+[NX Daemon Server] - 2025-08-31T13:22:10.014Z - [WATCHER]: 7 file(s) created or restored, 0 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-08-31T13:22:10.014Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-08-31T13:22:10.014Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-08-31T13:22:10.014Z - Time taken for 'hash changed files from watcher' 3.0457259994000196ms
+[NX Daemon Server] - 2025-08-31T13:22:10.117Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-08-31T13:22:10.117Z - [REQUEST]: dist/apps/frontend/assets/ekb.jpg,dist/apps/frontend/assets/msk.jpg,dist/apps/frontend/assets/kzn.jpeg,dist/apps/frontend/assets/kzn.jpg,dist/apps/frontend/favicon.ico,dist/apps/frontend/assets/nnv.jpg,dist/apps/frontend/assets/spb.jpg
+[NX Daemon Server] - 2025-08-31T13:22:10.118Z - [REQUEST]: 
+[NX Daemon Server] - 2025-08-31T13:22:10.299Z - Time taken for 'hash changed files from watcher' 3.3856019992381334ms
+[NX Daemon Server] - 2025-08-31T13:22:10.982Z - [WATCHER]: dist/apps/frontend/index.html was created or restored
+[NX Daemon Server] - 2025-08-31T13:22:10.982Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-08-31T13:22:11.079Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-08-31T13:22:11.084Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-08-31T13:22:11.084Z - [REQUEST]: dist/apps/frontend/index.html
+[NX Daemon Server] - 2025-08-31T13:22:11.084Z - [REQUEST]: 
+[NX Daemon Server] - 2025-08-31T13:22:11.250Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2025-08-31T13:22:11.250Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2025-08-31T13:22:11.250Z - Handled RECORD_OUTPUTS_HASH. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2025-08-31T13:22:11.255Z - Time taken for 'hash changed files from watcher' 0.5826110001653433ms
+[NX Daemon Server] - 2025-08-31T13:22:11.305Z - Closed a connection. Number of open connections: 0
