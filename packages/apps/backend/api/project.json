@@ -31,7 +31,7 @@
       "executor": "@nx/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/backend/api",
+        "outputPath": "dist/apps/backend",
         "main": "apps/backend/api/src/main.ts",
         "tsConfig": "apps/backend/api/tsconfig.app.json",
         "webpackConfig": "apps/backend/api/webpack.config.js",

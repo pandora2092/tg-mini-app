@@ -3,7 +3,7 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = composePlugins(withNx(), (config) => {
   config.target = 'node';
-  config.externals = [nodeExternals()]; // исключает node_modules (оставляем только твой код)
+//config.externals = [nodeExternals()]; // исключает node_modules (оставляем только твой код)
   config.output = {
     ...config.output,
     filename: 'main.js',

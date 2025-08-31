@@ -135,159 +135,211 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "ws-style/base/_reset.scss",
-        "hash": "4519540716874629441"
+        "file": "ws-style/base/_typography.scss",
+        "hash": "15929977293677930959"
       },
       {
         "file": "ws-style/abstract/_variables.scss",
         "hash": "4717441411696411313"
       },
       {
-        "file": "dist/apps/frontend/assets/spb.jpg",
-        "hash": "12701283684641612147"
-      },
-      {
-        "file": ".prettierignore",
-        "hash": "3395189204293871444"
-      },
-      {
-        "file": "dist/apps/frontend/index.html",
-        "hash": "15916957939440335163"
-      },
-      {
-        "file": "docker-compose.yml",
-        "hash": "6006452345000386905"
-      },
-      {
-        "file": "dist/apps/frontend/favicon.ico",
-        "hash": "9303420814833116677"
-      },
-      {
-        "file": "dist/apps/frontend/56.882430995c057d97.js",
-        "hash": "8083363741478793006"
-      },
-      {
-        "file": "dist/apps/frontend/assets/kzn.jpg",
-        "hash": "13083874826379285277"
-      },
-      {
-        "file": "ws-style/shame.scss",
-        "hash": "17173663226644184069"
-      },
-      {
-        "file": "tailwind.config.js",
-        "hash": "7297646471813263574"
-      },
-      {
-        "file": "dist/apps/frontend/styles.250f8eff96ebc2f0.css",
-        "hash": "2996658439332765418"
-      },
-      {
-        "file": "dist/libs/shared/data-access/src/lib/entities/users.interface.js",
-        "hash": "15298331466191075120"
-      },
-      {
-        "file": "dist/apps/frontend/8.18814c9c05537a47.js",
-        "hash": "7362276877212724160"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
-        "file": "ws-style/abstract/_functions.scss",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "11660067914261691334"
-      },
-      {
-        "file": "ws-style/themes/bootstrap/_theme.scss",
-        "hash": "6901098678408110214"
-      },
-      {
-        "file": "migrations.json",
-        "hash": "510430331186576391"
-      },
-      {
-        "file": "jest.config.ts",
-        "hash": "3494843969422251966"
-      },
-      {
-        "file": "ws-style/themes/material/_theme.scss",
-        "hash": "8793557714594110113"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "6576565065745328930"
-      },
-      {
-        "file": "dist/libs/shared/data-access/src/index.js.map",
-        "hash": "15121003979516537865"
-      },
-      {
-        "file": ".eslintrc.json",
-        "hash": "7683719772093154289"
-      },
-      {
-        "file": "dist/libs/shared/data-access/package.json",
-        "hash": "5815744339217849336"
-      },
-      {
-        "file": "ws-style/base/_typography.scss",
-        "hash": "15929977293677930959"
-      },
-      {
-        "file": "dist/libs/shared/data-access/src/lib/entities/users.interface.js.map",
-        "hash": "12560372016143461612"
-      },
-      {
-        "file": "dist/apps/frontend/assets/ekb.jpg",
-        "hash": "8875274334335757620"
-      },
-      {
-        "file": "dist/apps/frontend/690.46882e5bc35234b7.js",
-        "hash": "4442441392879711625"
-      },
-      {
-        "file": ".eslintignore",
-        "hash": "7663861978715868291"
-      },
-      {
         "file": "ws-style/themes/_index.scss",
         "hash": "2498796565825611202"
       },
       {
-        "file": "dist/apps/frontend/main.8cd12e36362352e3.js",
-        "hash": "1496153759587504993"
+        "file": "ws-style/utils.scss",
+        "hash": "11846678164619129407"
+      },
+      {
+        "file": "dist/libs/shared/data-access/src/index.d.ts",
+        "hash": "7475859909912227787"
+      },
+      {
+        "file": "dist/apps/frontend/237.6715686fd760a1ac.js",
+        "hash": "5607364544586637194"
       },
       {
         "file": "jest.preset.js",
         "hash": "9430166341120122740"
       },
       {
-        "file": "dist/apps/frontend/polyfills.bb84103ddd2890cd.js",
-        "hash": "1270467028775211931"
+        "file": "dist/apps/frontend/690.46882e5bc35234b7.js",
+        "hash": "4442441392879711625"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "dist/apps/frontend/assets/kzn.jpg",
+        "hash": "13083874826379285277"
+      },
+      {
+        "file": "dist/apps/frontend/styles.250f8eff96ebc2f0.css",
+        "hash": "2996658439332765418"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "6576565065745328930"
       },
       {
         "file": "dist/apps/frontend/904.bbc55ab2f0d21529.js",
         "hash": "11452435236256070055"
       },
       {
-        "file": "ws-style/abstract/_index.scss",
-        "hash": "5838738004583200663"
+        "file": "ws-style/themes/material/_theme.scss",
+        "hash": "8793557714594110113"
       },
       {
-        "file": ".editorconfig",
-        "hash": "5443105041930014821"
+        "file": "dist/apps/frontend/8.18814c9c05537a47.js",
+        "hash": "7362276877212724160"
+      },
+      {
+        "file": "dist/libs/shared/data-access/README.md",
+        "hash": "1012133926719352218"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "11660067914261691334"
+      },
+      {
+        "file": "ws-style/abstract/_index.scss",
+        "hash": "5838738004583200663"
       },
       {
         "file": "package-lock.json",
         "hash": "9589551402075692493"
       },
       {
+        "file": "dist/libs/shared/data-access/src/index.js",
+        "hash": "9952421214776493544"
+      },
+      {
+        "file": "ws-style/abstract/_placeholders.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "3395189204293871444"
+      },
+      {
+        "file": "README.md",
+        "hash": "16251794700551448870"
+      },
+      {
+        "file": "dist/apps/frontend/index.html",
+        "hash": "15916957939440335163"
+      },
+      {
+        "file": "migrations.json",
+        "hash": "510430331186576391"
+      },
+      {
+        "file": "dist/apps/frontend/polyfills.bb84103ddd2890cd.js",
+        "hash": "1270467028775211931"
+      },
+      {
+        "file": "dist/apps/frontend/assets/kzn.jpeg",
+        "hash": "11186667895599554939"
+      },
+      {
+        "file": "dist/apps/frontend/favicon.ico",
+        "hash": "9303420814833116677"
+      },
+      {
+        "file": "dist/libs/shared/data-access/package.json",
+        "hash": "5815744339217849336"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "7683719772093154289"
+      },
+      {
+        "file": "package.json",
+        "hash": "10819681062846132757"
+      },
+      {
+        "file": "dist/apps/frontend/assets/spb.jpg",
+        "hash": "12701283684641612147"
+      },
+      {
+        "file": "dist/libs/shared/data-access/src/index.js.map",
+        "hash": "15121003979516537865"
+      },
+      {
+        "file": ".firebase/hosting.ZGlzdC9hcHBzL2Zyb250ZW5k.cache",
+        "hash": "14577041420410570393"
+      },
+      {
+        "file": "dist/libs/shared/data-access/src/lib/entities/users.interface.js.map",
+        "hash": "12560372016143461612"
+      },
+      {
+        "file": "dist/apps/frontend/3rdpartylicenses.txt",
+        "hash": "13511994058347470884"
+      },
+      {
+        "file": "nx.json",
+        "hash": "15906505495969165004"
+      },
+      {
+        "file": "dist/apps/frontend/main.8cd12e36362352e3.js",
+        "hash": "1496153759587504993"
+      },
+      {
+        "file": "dist/apps/frontend/runtime.6f1db6d9d15f5f6c.js",
+        "hash": "2335593452646315834"
+      },
+      {
+        "file": ".env",
+        "hash": "1405751864469576770"
+      },
+      {
+        "file": "dist/libs/shared/data-access/src/lib/entities/users.interface.d.ts",
+        "hash": "17541924944364531864"
+      },
+      {
+        "file": "ws-style/shame.scss",
+        "hash": "17173663226644184069"
+      },
+      {
+        "file": "dist/apps/frontend/assets/msk.jpg",
+        "hash": "14707896042075080925"
+      },
+      {
+        "file": "ws-style/base/_index.scss",
+        "hash": "469782849225305986"
+      },
+      {
+        "file": "dist/apps/frontend/assets/nnv.jpg",
+        "hash": "6105941331401094128"
+      },
+      {
+        "file": "dist/apps/frontend/56.882430995c057d97.js",
+        "hash": "8083363741478793006"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": "ws-style/base/_reset.scss",
+        "hash": "4519540716874629441"
+      },
+      {
+        "file": "dist/apps/backend/main.js",
+        "hash": "16424724862054272508"
+      },
+      {
+        "file": "dist/apps/frontend/170.9096ad441186274c.js",
+        "hash": "10427306811358239418"
+      },
+      {
         "file": "ws-style/abstract/_mixins.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "ws-style/abstract/_functions.scss",
         "hash": "3244421341483603138"
       },
       {
@@ -295,107 +347,299 @@
         "hash": "4934098906304722861"
       },
       {
-        "file": "dist/libs/shared/data-access/src/lib/entities/users.interface.d.ts",
-        "hash": "17541924944364531864"
+        "file": "jest.config.ts",
+        "hash": "3494843969422251966"
       },
       {
-        "file": "dist/apps/frontend/runtime.6f1db6d9d15f5f6c.js",
-        "hash": "2335593452646315834"
+        "file": "tailwind.config.js",
+        "hash": "7297646471813263574"
       },
       {
-        "file": "package.json",
-        "hash": "10819681062846132757"
-      },
-      {
-        "file": "nx.json",
-        "hash": "15906505495969165004"
-      },
-      {
-        "file": ".firebase/hosting.ZGlzdC9hcHBzL2Zyb250ZW5k.cache",
-        "hash": "14577041420410570393"
-      },
-      {
-        "file": "ws-style/base/_index.scss",
-        "hash": "469782849225305986"
-      },
-      {
-        "file": "dist/libs/shared/data-access/README.md",
-        "hash": "1012133926719352218"
-      },
-      {
-        "file": "dist/apps/frontend/221.2cf153c67cfd3bd8.js",
-        "hash": "1776069514317493549"
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
       },
       {
         "file": "dist/apps/frontend/969.b925d2c0d6d2cf6d.js",
         "hash": "9845631279960706626"
       },
       {
-        "file": "ws-style/utils.scss",
-        "hash": "11846678164619129407"
+        "file": "dist/apps/frontend/assets/ekb.jpg",
+        "hash": "8875274334335757620"
       },
       {
-        "file": "dist/apps/frontend/170.9096ad441186274c.js",
-        "hash": "10427306811358239418"
-      },
-      {
-        "file": "dist/apps/frontend/237.6715686fd760a1ac.js",
-        "hash": "5607364544586637194"
-      },
-      {
-        "file": "dist/apps/frontend/assets/kzn.jpeg",
-        "hash": "11186667895599554939"
-      },
-      {
-        "file": "README.md",
-        "hash": "16251794700551448870"
-      },
-      {
-        "file": "dist/apps/frontend/assets/nnv.jpg",
-        "hash": "6105941331401094128"
+        "file": "ws-style/themes/bootstrap/_theme.scss",
+        "hash": "6901098678408110214"
       },
       {
         "file": "dist/apps/frontend/576.141e1d9014130ff0.js",
         "hash": "1982820594415643891"
       },
       {
-        "file": "ws-style/style.scss",
-        "hash": "17297066836121337455"
+        "file": "dist/libs/shared/data-access/src/lib/entities/users.interface.js",
+        "hash": "15298331466191075120"
       },
       {
-        "file": ".env",
-        "hash": "1405751864469576770"
-      },
-      {
-        "file": "dist/apps/frontend/3rdpartylicenses.txt",
-        "hash": "13511994058347470884"
-      },
-      {
-        "file": "dist/apps/frontend/assets/msk.jpg",
-        "hash": "14707896042075080925"
-      },
-      {
-        "file": "ws-style/abstract/_placeholders.scss",
-        "hash": "3244421341483603138"
+        "file": "docker-compose.yml",
+        "hash": "6006452345000386905"
       },
       {
         "file": "ws-style/base/_fonts.scss",
         "hash": "7838304286842273147"
       },
       {
-        "file": "dist/libs/shared/data-access/src/index.js",
-        "hash": "9952421214776493544"
+        "file": "ws-style/style.scss",
+        "hash": "17297066836121337455"
       },
       {
-        "file": "dist/libs/shared/data-access/src/index.d.ts",
-        "hash": "7475859909912227787"
-      },
-      {
-        "file": "dist/apps/backend/api/main.js",
-        "hash": "16424724862054272508"
+        "file": "dist/apps/frontend/221.2cf153c67cfd3bd8.js",
+        "hash": "1776069514317493549"
       }
     ],
     "projectFileMap": {
+      "admin": [
+        {
+          "file": "apps/admin/.eslintrc.json",
+          "hash": "3322449398258820698"
+        },
+        {
+          "file": "apps/admin/jest.config.ts",
+          "hash": "5232312042154059799"
+        },
+        {
+          "file": "apps/admin/project.json",
+          "hash": "15420862952081327450"
+        },
+        {
+          "file": "apps/admin/proxy.conf.json",
+          "hash": "13639477385720182256"
+        },
+        {
+          "file": "apps/admin/src/app/app.component.html",
+          "hash": "5654460193981998828"
+        },
+        {
+          "file": "apps/admin/src/app/app.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/admin/src/app/app.component.spec.ts",
+          "hash": "12310621412184580469",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/admin/src/app/app.component.ts",
+          "hash": "16106524760769828521",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/admin/src/app/app.config.ts",
+          "hash": "10618457967269332155",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/admin/src/app/app.routes.ts",
+          "hash": "6185150965714414910",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/admin/src/app/nx-welcome.component.ts",
+          "hash": "9958371106955339152",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/admin/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/admin/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/admin/src/index.html",
+          "hash": "7899792888691802531"
+        },
+        {
+          "file": "apps/admin/src/main.ts",
+          "hash": "16635586463787978962",
+          "deps": [
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "apps/admin/src/styles.scss",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "apps/admin/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "apps/admin/tsconfig.app.json",
+          "hash": "8365644956319658761"
+        },
+        {
+          "file": "apps/admin/tsconfig.editor.json",
+          "hash": "1055794200401717100"
+        },
+        {
+          "file": "apps/admin/tsconfig.json",
+          "hash": "14845187541790154013"
+        },
+        {
+          "file": "apps/admin/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "ui-component-custom": [
+        {
+          "file": "libs/ui-component-custom/.eslintrc.json",
+          "hash": "9628345067573567197"
+        },
+        {
+          "file": "libs/ui-component-custom/README.md",
+          "hash": "5327869183336461803"
+        },
+        {
+          "file": "libs/ui-component-custom/jest.config.ts",
+          "hash": "5812936666603545189"
+        },
+        {
+          "file": "libs/ui-component-custom/project.json",
+          "hash": "6820777144277955653"
+        },
+        {
+          "file": "libs/ui-component-custom/src/index.ts",
+          "hash": "1968975897211587541"
+        },
+        {
+          "file": "libs/ui-component-custom/src/lib/header/header.component.html",
+          "hash": "13248832209193801824"
+        },
+        {
+          "file": "libs/ui-component-custom/src/lib/header/header.component.scss",
+          "hash": "1118162012233700883"
+        },
+        {
+          "file": "libs/ui-component-custom/src/lib/header/header.component.spec.ts",
+          "hash": "4499384199601543057",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/ui-component-custom/src/lib/header/header.component.ts",
+          "hash": "12297087891473979062",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "frontend",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/ui-component-custom/src/lib/ui-component-custom/ui-component-custom.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/ui-component-custom/src/lib/ui-component-custom/ui-component-custom.component.html",
+          "hash": "18444235420250763371"
+        },
+        {
+          "file": "libs/ui-component-custom/src/lib/ui-component-custom/ui-component-custom.component.spec.ts",
+          "hash": "17567528536951612890",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/ui-component-custom/src/lib/ui-component-custom/ui-component-custom.component.ts",
+          "hash": "15351960048019831675",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/ui-component-custom/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/ui-component-custom/tsconfig.json",
+          "hash": "15487755565970508470"
+        },
+        {
+          "file": "libs/ui-component-custom/tsconfig.lib.json",
+          "hash": "5796668385415907511"
+        },
+        {
+          "file": "libs/ui-component-custom/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "backend-api-e2e": [
+        {
+          "file": "apps/backend/api-e2e/.eslintrc.json",
+          "hash": "9703569748258640057"
+        },
+        {
+          "file": "apps/backend/api-e2e/jest.config.ts",
+          "hash": "10801066158235286573"
+        },
+        {
+          "file": "apps/backend/api-e2e/project.json",
+          "hash": "5080544467504083491"
+        },
+        {
+          "file": "apps/backend/api-e2e/src/backend-api/backend-api.spec.ts",
+          "hash": "110394728024017389",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/backend/api-e2e/src/support/global-setup.ts",
+          "hash": "2568409276037275290"
+        },
+        {
+          "file": "apps/backend/api-e2e/src/support/global-teardown.ts",
+          "hash": "5275447082211835490"
+        },
+        {
+          "file": "apps/backend/api-e2e/src/support/test-setup.ts",
+          "hash": "10984585515912236441",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/backend/api-e2e/tsconfig.json",
+          "hash": "16437718785875567022"
+        },
+        {
+          "file": "apps/backend/api-e2e/tsconfig.spec.json",
+          "hash": "8081058164965064295"
+        }
+      ],
       "interfaces": [
         {
           "file": "libs/shared/data-access/.eslintrc.json",
@@ -441,6 +685,48 @@
           "hash": "9110660443763673899"
         }
       ],
+      "admin-e2e": [
+        {
+          "file": "apps/admin-e2e/.eslintrc.json",
+          "hash": "14060216369337943343"
+        },
+        {
+          "file": "apps/admin-e2e/cypress.config.ts",
+          "hash": "12926192948156709158",
+          "deps": [
+            "npm:@nx/cypress",
+            "npm:cypress"
+          ]
+        },
+        {
+          "file": "apps/admin-e2e/project.json",
+          "hash": "10527730707685804498"
+        },
+        {
+          "file": "apps/admin-e2e/src/e2e/app.cy.ts",
+          "hash": "13195148276539214705"
+        },
+        {
+          "file": "apps/admin-e2e/src/fixtures/example.json",
+          "hash": "11785586596216172004"
+        },
+        {
+          "file": "apps/admin-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "apps/admin-e2e/src/support/commands.ts",
+          "hash": "5397443931564808659"
+        },
+        {
+          "file": "apps/admin-e2e/src/support/e2e.ts",
+          "hash": "1054106023200826784"
+        },
+        {
+          "file": "apps/admin-e2e/tsconfig.json",
+          "hash": "4332380883180617610"
+        }
+      ],
       "backend-api": [
         {
           "file": "apps/backend/api/.eslintrc.json",
@@ -452,7 +738,7 @@
         },
         {
           "file": "apps/backend/api/project.json",
-          "hash": "1402722851398154913"
+          "hash": "1556245960222044160"
         },
         {
           "file": "apps/backend/api/src/app/.graphqlconfig",
@@ -696,7 +982,7 @@
         },
         {
           "file": "apps/backend/api/webpack.config.js",
-          "hash": "3335466926802996442",
+          "hash": "4753719612440802890",
           "deps": [
             "npm:@nx/webpack",
             "npm:webpack-node-externals"
@@ -1039,50 +1325,6 @@
           "hash": "2927375835638640771"
         }
       ],
-      "backend-api-e2e": [
-        {
-          "file": "apps/backend/api-e2e/.eslintrc.json",
-          "hash": "9703569748258640057"
-        },
-        {
-          "file": "apps/backend/api-e2e/jest.config.ts",
-          "hash": "10801066158235286573"
-        },
-        {
-          "file": "apps/backend/api-e2e/project.json",
-          "hash": "5080544467504083491"
-        },
-        {
-          "file": "apps/backend/api-e2e/src/backend-api/backend-api.spec.ts",
-          "hash": "110394728024017389",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/backend/api-e2e/src/support/global-setup.ts",
-          "hash": "2568409276037275290"
-        },
-        {
-          "file": "apps/backend/api-e2e/src/support/global-teardown.ts",
-          "hash": "5275447082211835490"
-        },
-        {
-          "file": "apps/backend/api-e2e/src/support/test-setup.ts",
-          "hash": "10984585515912236441",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/backend/api-e2e/tsconfig.json",
-          "hash": "16437718785875567022"
-        },
-        {
-          "file": "apps/backend/api-e2e/tsconfig.spec.json",
-          "hash": "8081058164965064295"
-        }
-      ],
       "frontend-e2e": [
         {
           "file": "apps/frontend-e2e/.eslintrc.json",
@@ -1123,248 +1365,6 @@
         {
           "file": "apps/frontend-e2e/tsconfig.json",
           "hash": "4332380883180617610"
-        }
-      ],
-      "admin-e2e": [
-        {
-          "file": "apps/admin-e2e/.eslintrc.json",
-          "hash": "14060216369337943343"
-        },
-        {
-          "file": "apps/admin-e2e/cypress.config.ts",
-          "hash": "12926192948156709158",
-          "deps": [
-            "npm:@nx/cypress",
-            "npm:cypress"
-          ]
-        },
-        {
-          "file": "apps/admin-e2e/project.json",
-          "hash": "10527730707685804498"
-        },
-        {
-          "file": "apps/admin-e2e/src/e2e/app.cy.ts",
-          "hash": "13195148276539214705"
-        },
-        {
-          "file": "apps/admin-e2e/src/fixtures/example.json",
-          "hash": "11785586596216172004"
-        },
-        {
-          "file": "apps/admin-e2e/src/support/app.po.ts",
-          "hash": "11157016311132186162"
-        },
-        {
-          "file": "apps/admin-e2e/src/support/commands.ts",
-          "hash": "5397443931564808659"
-        },
-        {
-          "file": "apps/admin-e2e/src/support/e2e.ts",
-          "hash": "1054106023200826784"
-        },
-        {
-          "file": "apps/admin-e2e/tsconfig.json",
-          "hash": "4332380883180617610"
-        }
-      ],
-      "ui-component-custom": [
-        {
-          "file": "libs/ui-component-custom/.eslintrc.json",
-          "hash": "9628345067573567197"
-        },
-        {
-          "file": "libs/ui-component-custom/README.md",
-          "hash": "5327869183336461803"
-        },
-        {
-          "file": "libs/ui-component-custom/jest.config.ts",
-          "hash": "5812936666603545189"
-        },
-        {
-          "file": "libs/ui-component-custom/project.json",
-          "hash": "6820777144277955653"
-        },
-        {
-          "file": "libs/ui-component-custom/src/index.ts",
-          "hash": "1968975897211587541"
-        },
-        {
-          "file": "libs/ui-component-custom/src/lib/header/header.component.html",
-          "hash": "13248832209193801824"
-        },
-        {
-          "file": "libs/ui-component-custom/src/lib/header/header.component.scss",
-          "hash": "1118162012233700883"
-        },
-        {
-          "file": "libs/ui-component-custom/src/lib/header/header.component.spec.ts",
-          "hash": "4499384199601543057",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/ui-component-custom/src/lib/header/header.component.ts",
-          "hash": "12297087891473979062",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "frontend",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "libs/ui-component-custom/src/lib/ui-component-custom/ui-component-custom.component.css",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "libs/ui-component-custom/src/lib/ui-component-custom/ui-component-custom.component.html",
-          "hash": "18444235420250763371"
-        },
-        {
-          "file": "libs/ui-component-custom/src/lib/ui-component-custom/ui-component-custom.component.spec.ts",
-          "hash": "17567528536951612890",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/ui-component-custom/src/lib/ui-component-custom/ui-component-custom.component.ts",
-          "hash": "15351960048019831675",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "libs/ui-component-custom/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/ui-component-custom/tsconfig.json",
-          "hash": "15487755565970508470"
-        },
-        {
-          "file": "libs/ui-component-custom/tsconfig.lib.json",
-          "hash": "5796668385415907511"
-        },
-        {
-          "file": "libs/ui-component-custom/tsconfig.spec.json",
-          "hash": "2927375835638640771"
-        }
-      ],
-      "admin": [
-        {
-          "file": "apps/admin/.eslintrc.json",
-          "hash": "3322449398258820698"
-        },
-        {
-          "file": "apps/admin/jest.config.ts",
-          "hash": "5232312042154059799"
-        },
-        {
-          "file": "apps/admin/project.json",
-          "hash": "15420862952081327450"
-        },
-        {
-          "file": "apps/admin/proxy.conf.json",
-          "hash": "13639477385720182256"
-        },
-        {
-          "file": "apps/admin/src/app/app.component.html",
-          "hash": "5654460193981998828"
-        },
-        {
-          "file": "apps/admin/src/app/app.component.scss",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/admin/src/app/app.component.spec.ts",
-          "hash": "12310621412184580469",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/admin/src/app/app.component.ts",
-          "hash": "16106524760769828521",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/admin/src/app/app.config.ts",
-          "hash": "10618457967269332155",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/admin/src/app/app.routes.ts",
-          "hash": "6185150965714414910",
-          "deps": [
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/admin/src/app/nx-welcome.component.ts",
-          "hash": "9958371106955339152",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "apps/admin/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/admin/src/favicon.ico",
-          "hash": "9303420814833116677"
-        },
-        {
-          "file": "apps/admin/src/index.html",
-          "hash": "7899792888691802531"
-        },
-        {
-          "file": "apps/admin/src/main.ts",
-          "hash": "16635586463787978962",
-          "deps": [
-            "npm:@angular/platform-browser"
-          ]
-        },
-        {
-          "file": "apps/admin/src/styles.scss",
-          "hash": "5195668842064076916"
-        },
-        {
-          "file": "apps/admin/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "apps/admin/tsconfig.app.json",
-          "hash": "8365644956319658761"
-        },
-        {
-          "file": "apps/admin/tsconfig.editor.json",
-          "hash": "1055794200401717100"
-        },
-        {
-          "file": "apps/admin/tsconfig.json",
-          "hash": "14845187541790154013"
-        },
-        {
-          "file": "apps/admin/tsconfig.spec.json",
-          "hash": "2927375835638640771"
         }
       ]
     }
