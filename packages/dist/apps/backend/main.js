@@ -24,22 +24,40 @@ const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
 const app_controller_1 = __webpack_require__(5);
 const typeorm_1 = __webpack_require__(6);
-const environments_1 = __webpack_require__(7);
 // import { GraphQLModule } from '@nestjs/graphql';
 // import { resolverMap } from './app.resolver';
 // import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-const users_module_1 = __webpack_require__(8);
-const list_module_1 = __webpack_require__(17);
-const events_module_1 = __webpack_require__(21);
-const place_module_1 = __webpack_require__(25);
+const users_module_1 = __webpack_require__(7);
+const list_module_1 = __webpack_require__(16);
+const events_module_1 = __webpack_require__(20);
+const place_module_1 = __webpack_require__(24);
+const config_1 = __webpack_require__(27);
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = tslib_1.__decorate([
     (0, common_1.Module)({
         imports: [
-            typeorm_1.TypeOrmModule.forRoot({
-                ...environments_1.environment.connection,
+            // TypeOrmModule.forRoot({
+            //   ...environment.connection,
+            // }),
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+                envFilePath: 'apps/backend/.env',
+            }),
+            typeorm_1.TypeOrmModule.forRootAsync({
+                imports: [config_1.ConfigModule],
+                inject: [config_1.ConfigService],
+                useFactory: (config) => ({
+                    type: config.get('DB_TYPE'),
+                    host: config.get('DB_HOST'),
+                    port: config.get('DB_PORT'),
+                    username: config.get('DB_USER_NAME'),
+                    password: config.get('DB_USER_PASSWORD'),
+                    database: config.get('DB_NAME'),
+                    autoLoadEntities: true,
+                    synchronize: true,
+                }),
             }),
             // GraphQLModule.forRoot<ApolloDriverConfig>({
             //   driver: ApolloDriver,
@@ -99,33 +117,6 @@ module.exports = require("@nestjs/typeorm");
 
 /***/ }),
 /* 7 */
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.environment = void 0;
-exports.environment = {
-    production: false,
-    jwt: {
-        secret: process.env.JWT_SECRET,
-        expiresIn: Number(process.env.JWT_EXPIRES_IN),
-    },
-    connection: {
-        type: process.env.DB_TYPE,
-        host: process.env.DB_HOST,
-        port: Number(process.env.DB_PORT),
-        username: process.env.DB_USER_NAME,
-        password: process.env.DB_USER_PASSWORD,
-        database: process.env.DB_NAME,
-        dropSchema: false,
-        synchronize: true,
-        logging: false,
-    },
-};
-
-
-/***/ }),
-/* 8 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -134,9 +125,9 @@ exports.UsersModule = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
 const typeorm_1 = __webpack_require__(6);
-const user_service_1 = __webpack_require__(9);
-const user_entity_1 = __webpack_require__(11);
-const user_resolver_1 = __webpack_require__(12);
+const user_service_1 = __webpack_require__(8);
+const user_entity_1 = __webpack_require__(10);
+const user_resolver_1 = __webpack_require__(11);
 /**
  * User module contain logic user entity
  */
@@ -155,7 +146,7 @@ exports.UsersModule = UsersModule = tslib_1.__decorate([
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -165,8 +156,8 @@ exports.UserService = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
 const typeorm_1 = __webpack_require__(6);
-const typeorm_2 = __webpack_require__(10);
-const user_entity_1 = __webpack_require__(11);
+const typeorm_2 = __webpack_require__(9);
+const user_entity_1 = __webpack_require__(10);
 /**
  * UserService find or create user from userRepository
  */
@@ -221,20 +212,20 @@ exports.UserService = UserService = tslib_1.__decorate([
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ ((module) => {
 
 module.exports = require("typeorm");
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.UserEntity = void 0;
 const tslib_1 = __webpack_require__(4);
-const typeorm_1 = __webpack_require__(10);
+const typeorm_1 = __webpack_require__(9);
 /**
  * Entity users provide access to db table users
  */
@@ -281,7 +272,7 @@ exports.UserEntity = UserEntity = tslib_1.__decorate([
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -289,12 +280,12 @@ var _a, _b;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.UserResolver = void 0;
 const tslib_1 = __webpack_require__(4);
-const graphql_1 = __webpack_require__(13);
+const graphql_1 = __webpack_require__(12);
 const common_1 = __webpack_require__(1);
-const user_service_1 = __webpack_require__(9);
-const user_decorator_1 = __webpack_require__(14);
-const user_entity_1 = __webpack_require__(11);
-const gql_auth_guard_1 = __webpack_require__(15);
+const user_service_1 = __webpack_require__(8);
+const user_decorator_1 = __webpack_require__(13);
+const user_entity_1 = __webpack_require__(10);
+const gql_auth_guard_1 = __webpack_require__(14);
 /**
  * UserResolver execute users.graphql query
  */
@@ -332,13 +323,13 @@ exports.UserResolver = UserResolver = tslib_1.__decorate([
 
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ ((module) => {
 
 module.exports = require("@nestjs/graphql");
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -354,7 +345,7 @@ exports.CurrentUser = (0, common_1.createParamDecorator)((data, ctx) => {
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -362,8 +353,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.GqlAuthGuard = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const graphql_1 = __webpack_require__(13);
-const passport_1 = __webpack_require__(16);
+const graphql_1 = __webpack_require__(12);
+const passport_1 = __webpack_require__(15);
 /**
  * GqlAuthGuard translate GqlExecutionContext request => UseGuard
  *
@@ -386,13 +377,13 @@ exports.GqlAuthGuard = GqlAuthGuard = tslib_1.__decorate([
 
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ ((module) => {
 
 module.exports = require("@nestjs/passport");
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -400,9 +391,9 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ListModule = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const list_controller_1 = __webpack_require__(18);
-const list_service_1 = __webpack_require__(19);
-const axios_1 = __webpack_require__(20);
+const list_controller_1 = __webpack_require__(17);
+const list_service_1 = __webpack_require__(18);
+const axios_1 = __webpack_require__(19);
 let ListModule = class ListModule {
 };
 exports.ListModule = ListModule;
@@ -416,7 +407,7 @@ exports.ListModule = ListModule = tslib_1.__decorate([
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -425,7 +416,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ListController = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const list_service_1 = __webpack_require__(19);
+const list_service_1 = __webpack_require__(18);
 let ListController = class ListController {
     constructor(listService) {
         this.listService = listService;
@@ -439,7 +430,7 @@ exports.ListController = ListController = tslib_1.__decorate([
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -448,7 +439,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ListService = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const axios_1 = __webpack_require__(20);
+const axios_1 = __webpack_require__(19);
 let ListService = class ListService {
     constructor(httpService) {
         this.httpService = httpService;
@@ -465,13 +456,13 @@ exports.ListService = ListService = tslib_1.__decorate([
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ ((module) => {
 
 module.exports = require("@nestjs/axios");
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -479,9 +470,9 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventsModule = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const events_service_1 = __webpack_require__(22);
-const events_controller_1 = __webpack_require__(24);
-const axios_1 = __webpack_require__(20);
+const events_service_1 = __webpack_require__(21);
+const events_controller_1 = __webpack_require__(23);
+const axios_1 = __webpack_require__(19);
 let EventsModule = class EventsModule {
 };
 exports.EventsModule = EventsModule;
@@ -495,7 +486,7 @@ exports.EventsModule = EventsModule = tslib_1.__decorate([
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -504,8 +495,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventsService = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const rxjs_1 = __webpack_require__(23);
-const axios_1 = __webpack_require__(20);
+const rxjs_1 = __webpack_require__(22);
+const axios_1 = __webpack_require__(19);
 const apiExternalUrl = "https://kudago.com";
 const actual_since = "1754905843";
 let EventsService = class EventsService {
@@ -545,13 +536,13 @@ exports.EventsService = EventsService = tslib_1.__decorate([
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ ((module) => {
 
 module.exports = require("rxjs");
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -560,7 +551,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventsController = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const events_service_1 = __webpack_require__(22);
+const events_service_1 = __webpack_require__(21);
 let EventsController = class EventsController {
     constructor(eventsService) {
         this.eventsService = eventsService;
@@ -637,7 +628,7 @@ exports.EventsController = EventsController = tslib_1.__decorate([
 
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -645,9 +636,9 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PlaceModule = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const place_service_1 = __webpack_require__(26);
-const place_controller_1 = __webpack_require__(27);
-const axios_1 = __webpack_require__(20);
+const place_service_1 = __webpack_require__(25);
+const place_controller_1 = __webpack_require__(26);
+const axios_1 = __webpack_require__(19);
 let PlaceModule = class PlaceModule {
 };
 exports.PlaceModule = PlaceModule;
@@ -661,7 +652,7 @@ exports.PlaceModule = PlaceModule = tslib_1.__decorate([
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -670,8 +661,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PlaceService = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const axios_1 = __webpack_require__(20);
-const rxjs_1 = __webpack_require__(23);
+const axios_1 = __webpack_require__(19);
+const rxjs_1 = __webpack_require__(22);
 const apiExternalUrl = "https://kudago.com";
 let PlaceService = class PlaceService {
     constructor(httpService) {
@@ -696,7 +687,7 @@ exports.PlaceService = PlaceService = tslib_1.__decorate([
 
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -705,7 +696,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PlaceController = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const place_service_1 = __webpack_require__(26);
+const place_service_1 = __webpack_require__(25);
 let PlaceController = class PlaceController {
     constructor(placeService) {
         this.placeService = placeService;
@@ -740,6 +731,12 @@ exports.PlaceController = PlaceController = tslib_1.__decorate([
 ], PlaceController);
 
 
+/***/ }),
+/* 27 */
+/***/ ((module) => {
+
+module.exports = require("@nestjs/config");
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -769,7 +766,7 @@ exports.PlaceController = PlaceController = tslib_1.__decorate([
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
 var exports = __webpack_exports__;
 
@@ -794,8 +791,5 @@ bootstrap();
 
 })();
 
-var __webpack_export_target__ = exports;
-for(var i in __webpack_exports__) __webpack_export_target__[i] = __webpack_exports__[i];
-if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
 /******/ })()
 ;
