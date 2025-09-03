@@ -20,24 +20,24 @@ console.log('DB_TYPE from env:', process.env.DB_TYPE);
       isGlobal: true,
       envFilePath: 'apps/backend/.env',
     }),
-    //  TypeOrmModule.forRoot({
-    //   ...environment.connection,
-    // }),
-    TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: (config: ConfigService) => ({
-        type: config.get<'postgres' | 'mysql'>('DB_TYPE'),
-        host: config.get<string>('DB_HOST'),
-        port: config.get<number>('DB_PORT'),
-        username: config.get<string>('DB_USER_NAME'),
-        password: config.get<string>('DB_USER_PASSWORD'),
-        database: config.get<string>('DB_NAME'),
-        autoLoadEntities: true,
-        synchronize: true,
-      }
-    ),
+     TypeOrmModule.forRoot({
+      ...environment.connection,
     }),
+    // TypeOrmModule.forRootAsync({
+    //   imports: [ConfigModule],
+    //   inject: [ConfigService],
+    //   useFactory: (config: ConfigService) => ({
+    //     type: config.get<'postgres' | 'mysql'>('DB_TYPE'),
+    //     host: config.get<string>('DB_HOST'),
+    //     port: config.get<number>('DB_PORT'),
+    //     username: config.get<string>('DB_USER_NAME'),
+    //     password: config.get<string>('DB_USER_PASSWORD'),
+    //     database: config.get<string>('DB_NAME'),
+    //     autoLoadEntities: true,
+    //     synchronize: true,
+    //   }
+    // ),
+    // }),
     // GraphQLModule.forRoot<ApolloDriverConfig>({
     //   driver: ApolloDriver,
     //   typePaths: ['./**/*.graphql'],
