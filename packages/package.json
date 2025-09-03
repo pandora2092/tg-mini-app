@@ -11,8 +11,8 @@
     "admin:build": "nx build admin",
     "client:test": "nx test frontend",
     "admin:test": "nx test admin",
-    "db:start": "docker-compose up -d",
-    "db:stop": "docker-compose stop",
+    "db:start": "cp .env ./docker-compose && cd docker-compose && docker-compose up -d",
+    "db:stop": "cd docker-compose && docker-compose stop && rm .env",
     "backend-api:start": "nx serve backend-api",
     "backend-api:build": "nx build backend-api"
   },
@@ -63,13 +63,13 @@
     "moment": "^2.30.1",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
-    "pg": "^8.11.5",
+    "pg": "^8.16.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.8.0",
     "swiper": "^11.2.10",
     "telegraf": "^4.16.3",
     "tslib": "^2.3.0",
-    "typeorm": "^0.3.20",
+    "typeorm": "^0.3.26",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {

@@ -39,13 +39,13 @@ exports.AppModule = AppModule;
 exports.AppModule = AppModule = tslib_1.__decorate([
     (0, common_1.Module)({
         imports: [
-            // TypeOrmModule.forRoot({
-            //   ...environment.connection,
-            // }),
             config_1.ConfigModule.forRoot({
                 isGlobal: true,
                 envFilePath: 'apps/backend/.env',
             }),
+            //  TypeOrmModule.forRoot({
+            //   ...environment.connection,
+            // }),
             typeorm_1.TypeOrmModule.forRootAsync({
                 imports: [config_1.ConfigModule],
                 inject: [config_1.ConfigService],

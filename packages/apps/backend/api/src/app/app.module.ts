@@ -16,13 +16,13 @@ console.log('DB_TYPE from env:', process.env.DB_TYPE);
 
 @Module({
   imports: [
-    // TypeOrmModule.forRoot({
-    //   ...environment.connection,
-    // }),
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: 'apps/backend/.env',
     }),
+    //  TypeOrmModule.forRoot({
+    //   ...environment.connection,
+    // }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
