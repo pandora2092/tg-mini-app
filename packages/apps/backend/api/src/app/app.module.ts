@@ -13,6 +13,9 @@ import { PlaceModule } from './place/place.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 console.log('DB_TYPE from env:', process.env.DB_TYPE);
+console.log('DB_TYPE from env:', process.env.DB_PORT);
+console.log('DB_TYPE from env:', process.env.DB_USER_NAME);
+console.log('DB_TYPE from env:', process.env.DB_HOST);
 
 @Module({
   imports: [
