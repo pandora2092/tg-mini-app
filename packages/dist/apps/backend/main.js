@@ -32,6 +32,7 @@ const list_module_1 = __webpack_require__(16);
 const events_module_1 = __webpack_require__(20);
 const place_module_1 = __webpack_require__(24);
 const config_1 = __webpack_require__(27);
+console.log('DB_TYPE from env:', process.env.DB_TYPE);
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;

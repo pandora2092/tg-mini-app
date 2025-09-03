@@ -12,6 +12,8 @@ import { EventsModule } from './events/events.module';
 import { PlaceModule } from './place/place.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
+console.log('DB_TYPE from env:', process.env.DB_TYPE);
+
 @Module({
   imports: [
     // TypeOrmModule.forRoot({
