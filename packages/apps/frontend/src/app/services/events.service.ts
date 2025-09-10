@@ -7,8 +7,6 @@ import { City, EventCategory, Events, Place } from '@packages/interfaces';
   providedIn: 'root',
 })
 export class EventsService {
-  constructor() {}
-
   http = inject(HttpClient);
 
   findOneEvent(id: number) {

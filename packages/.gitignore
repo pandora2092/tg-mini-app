@@ -43,3 +43,5 @@ Thumbs.db
 .angular
 .nx
 .firebase
+
+/docker-compose/.env

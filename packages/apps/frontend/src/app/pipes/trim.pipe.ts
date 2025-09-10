@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true,
 })
 export class TrimPipe implements PipeTransform {
-  transform(html: string, ...args: unknown[]): string {
+  transform(html: string): string {
     return html.replace(/<[^>]*>/g, '');
   }
 }

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventCategory } from '@packages/interfaces';
 
@@ -13,7 +13,7 @@ import { DatastoreService } from '../../../../../apps/frontend/src/app/services/
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   categories = signal<EventCategory[]>([]);
   eventsService = inject(EventsService);
 

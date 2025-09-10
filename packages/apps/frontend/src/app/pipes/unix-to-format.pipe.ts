@@ -7,7 +7,7 @@ import 'moment/locale/ru';
   standalone: true,
 })
 export class DataPipe implements PipeTransform {
-  transform(html: number, ...args: unknown[]): string {
+  transform(html: number): string {
     console.log(html);
     return moment.unix(html).locale('ru').format('D MMMM Y H:mm');
   }

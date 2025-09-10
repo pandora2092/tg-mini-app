@@ -7,8 +7,6 @@ import { PlaceCategory } from '@packages/interfaces';
   providedIn: 'root',
 })
 export class PlaceService {
-  constructor() {}
-
   http = inject(HttpClient);
 
   getAllEventCategories() {
