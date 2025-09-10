@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EventCategory } from '../../../../../apps/frontend/src/app/interfaces/events.interface';
+import { EventCategory } from '@packages/interfaces';
+
 import { EventsService } from '../../../../../apps/frontend/src/app/services/events.service';
 import { RouterLink, ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { DatastoreService } from '../../../../../apps/frontend/src/app/services/datastore.service';

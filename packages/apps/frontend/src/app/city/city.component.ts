@@ -1,9 +1,9 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventsService } from '../services/events.service';
-import { Event, Events} from '../interfaces/events.interface';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HeaderComponent } from '@packages/ui-component-custom';
+import { Event } from '@packages/interfaces';
 
 
 @Component({

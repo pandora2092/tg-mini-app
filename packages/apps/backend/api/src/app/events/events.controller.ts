@@ -1,8 +1,6 @@
 import {
   Controller,
   Get,
-  Body,
-  Query,
   Param,
 } from '@nestjs/common';
 import { EventsService } from './events.service';

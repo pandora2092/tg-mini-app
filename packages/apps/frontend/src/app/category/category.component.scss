@@ -1,5 +1,5 @@
 .event-wrapper {
-    padding: 20px;
+  padding: 20px;
 }
 
 .event-card {
@@ -8,7 +8,7 @@
 }
 
 .event-card img {
-    position: static;
+  position: static;
 }
 
 .loader_wrapper {
@@ -21,13 +21,31 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  display: grid;
-  grid-template-columns: repeat(3, 85px);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  // display: grid;
+  // grid-template-columns: repeat(3, 85px);
+  // grid-template-rows: repeat(2, 1fr);
+  // grid-column-gap: 0px;
+  // grid-row-gap: 0px;
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
-  background-color: rgba(170, 25, 59, .1);;
+  background-color: rgba(170, 25, 59, 0.1);
+}
+
+.row {
+  display: flex;
+}
+
+.row-top {
+  flex: 1;
+}
+
+.row-bottom {
+  flex: 0 0 auto;
+}
+
+.row-top .col {
+  flex: 1;
 }
 
 .event-wrapper h5 {
@@ -42,14 +60,9 @@
   z-index: -1;
 }
 
-.filter_data div:nth-child(1) { grid-area: 1 / 1 / 2 / 2; }
-.filter_data div:nth-child(2)  { grid-area: 1 / 2 / 2 / 3; }
-.filter_data div:nth-child(3)  { grid-area: 1 / 3 / 2 / 4; }
-.filter_data div:nth-child(4)  { grid-area: 2 / 1 / 3 / 4; }
-
 .filter_data p {
   margin: 10px;
-  border-bottom: 1px dashed rgba(47, 50, 53, .25);
+  border-bottom: 1px dashed rgba(47, 50, 53, 0.25);
 }
 
 .is-chosen p {
@@ -71,7 +84,7 @@
 
 .price {
   font-weight: bold;
-  margin-left: 10px; 
+  margin-left: 10px;
 }
 
 .button_more {

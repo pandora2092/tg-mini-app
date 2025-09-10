@@ -24,15 +24,15 @@ const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
 const app_controller_1 = __webpack_require__(5);
 const typeorm_1 = __webpack_require__(6);
-const environments_1 = __webpack_require__(7);
 // import { GraphQLModule } from '@nestjs/graphql';
 // import { resolverMap } from './app.resolver';
 // import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-const users_module_1 = __webpack_require__(8);
-const list_module_1 = __webpack_require__(17);
-const events_module_1 = __webpack_require__(21);
-const place_module_1 = __webpack_require__(25);
-const config_1 = __webpack_require__(28);
+const list_module_1 = __webpack_require__(7);
+const events_module_1 = __webpack_require__(11);
+const place_module_1 = __webpack_require__(15);
+const config_1 = __webpack_require__(18);
+const users_module_1 = __webpack_require__(19);
+const user_entity_1 = __webpack_require__(22);
 console.log('DB_TYPE from env:', process.env.DB_TYPE);
 console.log('DB_TYPE from env:', process.env.DB_PORT);
 console.log('DB_TYPE from env:', process.env.DB_USER_NAME);
@@ -47,24 +47,24 @@ exports.AppModule = AppModule = tslib_1.__decorate([
                 isGlobal: true,
                 envFilePath: 'apps/backend/.env',
             }),
-            typeorm_1.TypeOrmModule.forRoot({
-                ...environments_1.environment.connection,
-            }),
-            // TypeOrmModule.forRootAsync({
-            //   imports: [ConfigModule],
-            //   inject: [ConfigService],
-            //   useFactory: (config: ConfigService) => ({
-            //     type: config.get<'postgres' | 'mysql'>('DB_TYPE'),
-            //     host: config.get<string>('DB_HOST'),
-            //     port: config.get<number>('DB_PORT'),
-            //     username: config.get<string>('DB_USER_NAME'),
-            //     password: config.get<string>('DB_USER_PASSWORD'),
-            //     database: config.get<string>('DB_NAME'),
-            //     autoLoadEntities: true,
-            //     synchronize: true,
-            //   }
-            // ),
+            // TypeOrmModule.forRoot({
+            //   ...environment.connection,
             // }),
+            typeorm_1.TypeOrmModule.forRootAsync({
+                imports: [config_1.ConfigModule],
+                inject: [config_1.ConfigService],
+                useFactory: (config) => ({
+                    type: config.get('DB_TYPE'),
+                    host: config.get('DB_HOST'),
+                    port: config.get('DB_PORT'),
+                    username: config.get('DB_USER_NAME'),
+                    password: config.get('DB_USER_PASSWORD'),
+                    database: config.get('DB_NAME'),
+                    autoLoadEntities: true,
+                    entities: [user_entity_1.UserEntity],
+                    synchronize: true,
+                }),
+            }),
             // GraphQLModule.forRoot<ApolloDriverConfig>({
             //   driver: ApolloDriver,
             //   typePaths: ['./**/*.graphql'],
@@ -72,10 +72,10 @@ exports.AppModule = AppModule = tslib_1.__decorate([
             //   playground: true,
             //   resolvers: [resolverMap],
             // }),
-            users_module_1.UsersModule,
             list_module_1.ListModule,
             events_module_1.EventsModule,
             place_module_1.PlaceModule,
+            users_module_1.UsersModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [],
@@ -123,300 +123,6 @@ module.exports = require("@nestjs/typeorm");
 
 /***/ }),
 /* 7 */
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.environment = void 0;
-exports.environment = {
-    production: false,
-    jwt: {
-        secret: process.env.JWT_SECRET,
-        expiresIn: Number(process.env.JWT_EXPIRES_IN),
-    },
-    connection: {
-        type: process.env.DB_TYPE,
-        host: process.env.DB_HOST,
-        port: Number(process.env.DB_PORT),
-        username: process.env.DB_USER_NAME,
-        password: process.env.DB_USER_PASSWORD,
-        database: process.env.DB_NAME,
-        dropSchema: false,
-        synchronize: true,
-        logging: true,
-    },
-};
-
-
-/***/ }),
-/* 8 */
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.UsersModule = void 0;
-const tslib_1 = __webpack_require__(4);
-const common_1 = __webpack_require__(1);
-const typeorm_1 = __webpack_require__(6);
-const user_service_1 = __webpack_require__(9);
-const user_entity_1 = __webpack_require__(11);
-const user_resolver_1 = __webpack_require__(12);
-/**
- * User module contain logic user entity
- */
-let UsersModule = class UsersModule {
-};
-exports.UsersModule = UsersModule;
-exports.UsersModule = UsersModule = tslib_1.__decorate([
-    (0, common_1.Module)({
-        imports: [
-            typeorm_1.TypeOrmModule.forFeature([user_entity_1.UserEntity]),
-        ],
-        providers: [user_service_1.UserService, user_resolver_1.UserResolver],
-        exports: [user_service_1.UserService],
-    })
-], UsersModule);
-
-
-/***/ }),
-/* 9 */
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-var _a;
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.UserService = void 0;
-const tslib_1 = __webpack_require__(4);
-const common_1 = __webpack_require__(1);
-const typeorm_1 = __webpack_require__(6);
-const typeorm_2 = __webpack_require__(10);
-const user_entity_1 = __webpack_require__(11);
-/**
- * UserService find or create user from userRepository
- */
-let UserService = class UserService {
-    /**
-     * Inject into UserService: userRepository
-     *
-     * @param userRepository
-     */
-    constructor(userRepository) {
-        this.userRepository = userRepository;
-    }
-    /**
-     * Find all users from userRepository
-     */
-    async find() {
-        return await this.userRepository.find();
-    }
-    /**
-     * Find user by id from userRepository
-     *
-     * @param id
-     */
-    async findOneById(id) {
-        return await (this.userRepository.findOne({ where: { id: id } })) || null;
-    }
-    /**
-     * Find user by username from userRepository
-     *
-     * @param username
-     */
-    async findOneByUserName(username) {
-        const users = await this.userRepository.find({ where: { username: username } });
-        return users.length === 1 ? users[0] : null;
-    }
-    /**
-     * Create new user into userRepository
-     *
-     * @param user provides candidate of new user into userRepository
-     */
-    async createUser(user) {
-        const newUser = await this.userRepository.create(user);
-        return this.userRepository.save(newUser);
-    }
-};
-exports.UserService = UserService;
-exports.UserService = UserService = tslib_1.__decorate([
-    (0, common_1.Injectable)(),
-    tslib_1.__param(0, (0, typeorm_1.InjectRepository)(user_entity_1.UserEntity)),
-    tslib_1.__metadata("design:paramtypes", [typeof (_a = typeof typeorm_2.Repository !== "undefined" && typeorm_2.Repository) === "function" ? _a : Object])
-], UserService);
-
-
-/***/ }),
-/* 10 */
-/***/ ((module) => {
-
-module.exports = require("typeorm");
-
-/***/ }),
-/* 11 */
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.UserEntity = void 0;
-const tslib_1 = __webpack_require__(4);
-const typeorm_1 = __webpack_require__(10);
-/**
- * Entity users provide access to db table users
- */
-let UserEntity = class UserEntity {
-};
-exports.UserEntity = UserEntity;
-tslib_1.__decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
-    tslib_1.__metadata("design:type", Number)
-], UserEntity.prototype, "id", void 0);
-tslib_1.__decorate([
-    (0, typeorm_1.CreateDateColumn)(),
-    tslib_1.__metadata("design:type", String)
-], UserEntity.prototype, "created", void 0);
-tslib_1.__decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
-    tslib_1.__metadata("design:type", String)
-], UserEntity.prototype, "updated", void 0);
-tslib_1.__decorate([
-    (0, typeorm_1.Column)(),
-    tslib_1.__metadata("design:type", String)
-], UserEntity.prototype, "email", void 0);
-tslib_1.__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    tslib_1.__metadata("design:type", String)
-], UserEntity.prototype, "phone", void 0);
-tslib_1.__decorate([
-    (0, typeorm_1.Column)(),
-    tslib_1.__metadata("design:type", String)
-], UserEntity.prototype, "password", void 0);
-tslib_1.__decorate([
-    (0, typeorm_1.Column)({ length: 50, unique: true }),
-    tslib_1.__metadata("design:type", String)
-], UserEntity.prototype, "username", void 0);
-tslib_1.__decorate([
-    (0, typeorm_1.Column)({ length: 50, unique: true, nullable: true }),
-    tslib_1.__metadata("design:type", String)
-], UserEntity.prototype, "nickname", void 0);
-exports.UserEntity = UserEntity = tslib_1.__decorate([
-    (0, typeorm_1.Entity)({
-        name: 'users',
-    })
-], UserEntity);
-
-
-/***/ }),
-/* 12 */
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-var _a, _b;
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.UserResolver = void 0;
-const tslib_1 = __webpack_require__(4);
-const graphql_1 = __webpack_require__(13);
-const common_1 = __webpack_require__(1);
-const user_service_1 = __webpack_require__(9);
-const user_decorator_1 = __webpack_require__(14);
-const user_entity_1 = __webpack_require__(11);
-const gql_auth_guard_1 = __webpack_require__(15);
-/**
- * UserResolver execute users.graphql query
- */
-let UserResolver = class UserResolver {
-    /**
-     * Inject into UserResolver: UserService
-     *
-     * @param userService find user from userRepository
-     */
-    constructor(userService) {
-        this.userService = userService;
-    }
-    /**
-     * Implement GraphQL Query 'user'
-     *
-     * @param user provides the user as a candidate for search in userRepository
-     */
-    async whoAmI(user) {
-        return await this.userService.findOneById(user.id);
-    }
-};
-exports.UserResolver = UserResolver;
-tslib_1.__decorate([
-    (0, graphql_1.Query)('user'),
-    (0, common_1.UseGuards)(gql_auth_guard_1.GqlAuthGuard),
-    tslib_1.__param(0, (0, user_decorator_1.CurrentUser)()),
-    tslib_1.__metadata("design:type", Function),
-    tslib_1.__metadata("design:paramtypes", [typeof (_b = typeof user_entity_1.UserEntity !== "undefined" && user_entity_1.UserEntity) === "function" ? _b : Object]),
-    tslib_1.__metadata("design:returntype", Promise)
-], UserResolver.prototype, "whoAmI", null);
-exports.UserResolver = UserResolver = tslib_1.__decorate([
-    (0, graphql_1.Resolver)('User'),
-    tslib_1.__metadata("design:paramtypes", [typeof (_a = typeof user_service_1.UserService !== "undefined" && user_service_1.UserService) === "function" ? _a : Object])
-], UserResolver);
-
-
-/***/ }),
-/* 13 */
-/***/ ((module) => {
-
-module.exports = require("@nestjs/graphql");
-
-/***/ }),
-/* 14 */
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.CurrentUser = void 0;
-const common_1 = __webpack_require__(1);
-/**
- * Extract context from ExecutionContext
- */
-exports.CurrentUser = (0, common_1.createParamDecorator)((data, ctx) => {
-    return ctx;
-});
-
-
-/***/ }),
-/* 15 */
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.GqlAuthGuard = void 0;
-const tslib_1 = __webpack_require__(4);
-const common_1 = __webpack_require__(1);
-const graphql_1 = __webpack_require__(13);
-const passport_1 = __webpack_require__(16);
-/**
- * GqlAuthGuard translate GqlExecutionContext request => UseGuard
- *
- */
-let GqlAuthGuard = class GqlAuthGuard extends (0, passport_1.AuthGuard)('jwt') {
-    /**
-     * getRequest return ExecutionContext as GqlExecutionContext request
-     *
-     * @param context
-     */
-    getRequest(context) {
-        const ctx = graphql_1.GqlExecutionContext.create(context);
-        return ctx.getContext().req;
-    }
-};
-exports.GqlAuthGuard = GqlAuthGuard;
-exports.GqlAuthGuard = GqlAuthGuard = tslib_1.__decorate([
-    (0, common_1.Injectable)()
-], GqlAuthGuard);
-
-
-/***/ }),
-/* 16 */
-/***/ ((module) => {
-
-module.exports = require("@nestjs/passport");
-
-/***/ }),
-/* 17 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -424,9 +130,9 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ListModule = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const list_controller_1 = __webpack_require__(18);
-const list_service_1 = __webpack_require__(19);
-const axios_1 = __webpack_require__(20);
+const list_controller_1 = __webpack_require__(8);
+const list_service_1 = __webpack_require__(9);
+const axios_1 = __webpack_require__(10);
 let ListModule = class ListModule {
 };
 exports.ListModule = ListModule;
@@ -440,7 +146,7 @@ exports.ListModule = ListModule = tslib_1.__decorate([
 
 
 /***/ }),
-/* 18 */
+/* 8 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -449,7 +155,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ListController = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const list_service_1 = __webpack_require__(19);
+const list_service_1 = __webpack_require__(9);
 let ListController = class ListController {
     constructor(listService) {
         this.listService = listService;
@@ -463,7 +169,7 @@ exports.ListController = ListController = tslib_1.__decorate([
 
 
 /***/ }),
-/* 19 */
+/* 9 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -472,7 +178,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ListService = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const axios_1 = __webpack_require__(20);
+const axios_1 = __webpack_require__(10);
 let ListService = class ListService {
     constructor(httpService) {
         this.httpService = httpService;
@@ -489,13 +195,13 @@ exports.ListService = ListService = tslib_1.__decorate([
 
 
 /***/ }),
-/* 20 */
+/* 10 */
 /***/ ((module) => {
 
 module.exports = require("@nestjs/axios");
 
 /***/ }),
-/* 21 */
+/* 11 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -503,9 +209,9 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventsModule = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const events_service_1 = __webpack_require__(22);
-const events_controller_1 = __webpack_require__(24);
-const axios_1 = __webpack_require__(20);
+const events_service_1 = __webpack_require__(12);
+const events_controller_1 = __webpack_require__(14);
+const axios_1 = __webpack_require__(10);
 let EventsModule = class EventsModule {
 };
 exports.EventsModule = EventsModule;
@@ -519,7 +225,7 @@ exports.EventsModule = EventsModule = tslib_1.__decorate([
 
 
 /***/ }),
-/* 22 */
+/* 12 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -528,8 +234,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventsService = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const rxjs_1 = __webpack_require__(23);
-const axios_1 = __webpack_require__(20);
+const rxjs_1 = __webpack_require__(13);
+const axios_1 = __webpack_require__(10);
 const apiExternalUrl = "https://kudago.com";
 const actual_since = "1754905843";
 let EventsService = class EventsService {
@@ -569,13 +275,13 @@ exports.EventsService = EventsService = tslib_1.__decorate([
 
 
 /***/ }),
-/* 23 */
+/* 13 */
 /***/ ((module) => {
 
 module.exports = require("rxjs");
 
 /***/ }),
-/* 24 */
+/* 14 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -584,7 +290,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventsController = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const events_service_1 = __webpack_require__(22);
+const events_service_1 = __webpack_require__(12);
 let EventsController = class EventsController {
     constructor(eventsService) {
         this.eventsService = eventsService;
@@ -661,7 +367,7 @@ exports.EventsController = EventsController = tslib_1.__decorate([
 
 
 /***/ }),
-/* 25 */
+/* 15 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -669,9 +375,9 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PlaceModule = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const place_service_1 = __webpack_require__(26);
-const place_controller_1 = __webpack_require__(27);
-const axios_1 = __webpack_require__(20);
+const place_service_1 = __webpack_require__(16);
+const place_controller_1 = __webpack_require__(17);
+const axios_1 = __webpack_require__(10);
 let PlaceModule = class PlaceModule {
 };
 exports.PlaceModule = PlaceModule;
@@ -685,7 +391,7 @@ exports.PlaceModule = PlaceModule = tslib_1.__decorate([
 
 
 /***/ }),
-/* 26 */
+/* 16 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -694,8 +400,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PlaceService = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const axios_1 = __webpack_require__(20);
-const rxjs_1 = __webpack_require__(23);
+const axios_1 = __webpack_require__(10);
+const rxjs_1 = __webpack_require__(13);
 const apiExternalUrl = "https://kudago.com";
 let PlaceService = class PlaceService {
     constructor(httpService) {
@@ -720,7 +426,7 @@ exports.PlaceService = PlaceService = tslib_1.__decorate([
 
 
 /***/ }),
-/* 27 */
+/* 17 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -729,7 +435,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PlaceController = void 0;
 const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
-const place_service_1 = __webpack_require__(26);
+const place_service_1 = __webpack_require__(16);
 let PlaceController = class PlaceController {
     constructor(placeService) {
         this.placeService = placeService;
@@ -765,10 +471,239 @@ exports.PlaceController = PlaceController = tslib_1.__decorate([
 
 
 /***/ }),
-/* 28 */
+/* 18 */
 /***/ ((module) => {
 
 module.exports = require("@nestjs/config");
+
+/***/ }),
+/* 19 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.UsersModule = void 0;
+const tslib_1 = __webpack_require__(4);
+const common_1 = __webpack_require__(1);
+const users_service_1 = __webpack_require__(20);
+const users_controller_1 = __webpack_require__(23);
+const typeorm_1 = __webpack_require__(6);
+const user_entity_1 = __webpack_require__(22);
+let UsersModule = class UsersModule {
+};
+exports.UsersModule = UsersModule;
+exports.UsersModule = UsersModule = tslib_1.__decorate([
+    (0, common_1.Module)({
+        imports: [typeorm_1.TypeOrmModule.forFeature([user_entity_1.UserEntity])],
+        controllers: [users_controller_1.UsersController],
+        providers: [users_service_1.UsersService],
+    })
+], UsersModule);
+
+
+/***/ }),
+/* 20 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+var _a;
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.UsersService = void 0;
+const tslib_1 = __webpack_require__(4);
+const common_1 = __webpack_require__(1);
+const typeorm_1 = __webpack_require__(21);
+const typeorm_2 = __webpack_require__(6);
+const user_entity_1 = __webpack_require__(22);
+let UsersService = class UsersService {
+    constructor(userRepo) {
+        this.userRepo = userRepo;
+    }
+    async create(chatId, username) {
+        let user = await this.userRepo.findOne({ where: { chatId } });
+        if (!user) {
+            user = this.userRepo.create({ chatId, username });
+            await this.userRepo.save(user);
+        }
+        return user;
+    }
+    findAll() {
+        return this.userRepo.find();
+    }
+    findOne(id) {
+        return `This action returns a #${id} user`;
+    }
+    update(id, updateUserDto) {
+        return `This action updates a #${id} user`;
+    }
+    remove(id) {
+        return `This action removes a #${id} user`;
+    }
+};
+exports.UsersService = UsersService;
+exports.UsersService = UsersService = tslib_1.__decorate([
+    (0, common_1.Injectable)(),
+    tslib_1.__param(0, (0, typeorm_2.InjectRepository)(user_entity_1.UserEntity)),
+    tslib_1.__metadata("design:paramtypes", [typeof (_a = typeof typeorm_1.Repository !== "undefined" && typeorm_1.Repository) === "function" ? _a : Object])
+], UsersService);
+
+
+/***/ }),
+/* 21 */
+/***/ ((module) => {
+
+module.exports = require("typeorm");
+
+/***/ }),
+/* 22 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+var _a, _b;
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.UserEntity = void 0;
+const tslib_1 = __webpack_require__(4);
+const typeorm_1 = __webpack_require__(21);
+let UserEntity = class UserEntity {
+};
+exports.UserEntity = UserEntity;
+tslib_1.__decorate([
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    tslib_1.__metadata("design:type", Number)
+], UserEntity.prototype, "id", void 0);
+tslib_1.__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar', unique: true }),
+    tslib_1.__metadata("design:type", String)
+], UserEntity.prototype, "chatId", void 0);
+tslib_1.__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar' }),
+    tslib_1.__metadata("design:type", String)
+], UserEntity.prototype, "username", void 0);
+tslib_1.__decorate([
+    (0, typeorm_1.Column)({ type: 'boolean', default: false }),
+    tslib_1.__metadata("design:type", Boolean)
+], UserEntity.prototype, "delivered", void 0);
+tslib_1.__decorate([
+    (0, typeorm_1.Column)({ type: 'boolean', default: false }),
+    tslib_1.__metadata("design:type", Boolean)
+], UserEntity.prototype, "dead", void 0);
+tslib_1.__decorate([
+    (0, typeorm_1.CreateDateColumn)({ type: 'timestamp' }),
+    tslib_1.__metadata("design:type", typeof (_a = typeof Date !== "undefined" && Date) === "function" ? _a : Object)
+], UserEntity.prototype, "created", void 0);
+tslib_1.__decorate([
+    (0, typeorm_1.UpdateDateColumn)({ type: 'timestamp' }),
+    tslib_1.__metadata("design:type", typeof (_b = typeof Date !== "undefined" && Date) === "function" ? _b : Object)
+], UserEntity.prototype, "updated", void 0);
+exports.UserEntity = UserEntity = tslib_1.__decorate([
+    (0, typeorm_1.Entity)({ name: 'users' })
+], UserEntity);
+
+
+/***/ }),
+/* 23 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+var _a, _b;
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.UsersController = void 0;
+const tslib_1 = __webpack_require__(4);
+const common_1 = __webpack_require__(1);
+const users_service_1 = __webpack_require__(20);
+const update_user_dto_1 = __webpack_require__(24);
+let UsersController = class UsersController {
+    constructor(usersService) {
+        this.usersService = usersService;
+    }
+    create(body) {
+        return this.usersService.create(body.chatId, body.username);
+    }
+    findAll() {
+        return this.usersService.findAll();
+    }
+    findOne(id) {
+        return this.usersService.findOne(+id);
+    }
+    update(id, updateUserDto) {
+        return this.usersService.update(+id, updateUserDto);
+    }
+    remove(id) {
+        return this.usersService.remove(+id);
+    }
+};
+exports.UsersController = UsersController;
+tslib_1.__decorate([
+    (0, common_1.Post)(),
+    tslib_1.__param(0, (0, common_1.Body)()),
+    tslib_1.__metadata("design:type", Function),
+    tslib_1.__metadata("design:paramtypes", [Object]),
+    tslib_1.__metadata("design:returntype", void 0)
+], UsersController.prototype, "create", null);
+tslib_1.__decorate([
+    (0, common_1.Get)(),
+    tslib_1.__metadata("design:type", Function),
+    tslib_1.__metadata("design:paramtypes", []),
+    tslib_1.__metadata("design:returntype", void 0)
+], UsersController.prototype, "findAll", null);
+tslib_1.__decorate([
+    (0, common_1.Get)(':id'),
+    tslib_1.__param(0, (0, common_1.Param)('id')),
+    tslib_1.__metadata("design:type", Function),
+    tslib_1.__metadata("design:paramtypes", [String]),
+    tslib_1.__metadata("design:returntype", void 0)
+], UsersController.prototype, "findOne", null);
+tslib_1.__decorate([
+    (0, common_1.Patch)(':id'),
+    tslib_1.__param(0, (0, common_1.Param)('id')),
+    tslib_1.__param(1, (0, common_1.Body)()),
+    tslib_1.__metadata("design:type", Function),
+    tslib_1.__metadata("design:paramtypes", [String, typeof (_b = typeof update_user_dto_1.UpdateUserDto !== "undefined" && update_user_dto_1.UpdateUserDto) === "function" ? _b : Object]),
+    tslib_1.__metadata("design:returntype", void 0)
+], UsersController.prototype, "update", null);
+tslib_1.__decorate([
+    (0, common_1.Delete)(':id'),
+    tslib_1.__param(0, (0, common_1.Param)('id')),
+    tslib_1.__metadata("design:type", Function),
+    tslib_1.__metadata("design:paramtypes", [String]),
+    tslib_1.__metadata("design:returntype", void 0)
+], UsersController.prototype, "remove", null);
+exports.UsersController = UsersController = tslib_1.__decorate([
+    (0, common_1.Controller)('users'),
+    tslib_1.__metadata("design:paramtypes", [typeof (_a = typeof users_service_1.UsersService !== "undefined" && users_service_1.UsersService) === "function" ? _a : Object])
+], UsersController);
+
+
+/***/ }),
+/* 24 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.UpdateUserDto = void 0;
+const mapped_types_1 = __webpack_require__(25);
+const create_user_dto_1 = __webpack_require__(26);
+class UpdateUserDto extends (0, mapped_types_1.PartialType)(create_user_dto_1.CreateUserDto) {
+}
+exports.UpdateUserDto = UpdateUserDto;
+
+
+/***/ }),
+/* 25 */
+/***/ ((module) => {
+
+module.exports = require("@nestjs/mapped-types");
+
+/***/ }),
+/* 26 */
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.CreateUserDto = void 0;
+class CreateUserDto {
+}
+exports.CreateUserDto = CreateUserDto;
+
 
 /***/ })
 /******/ 	]);

@@ -1,19 +1,12 @@
-import {Module} from '@nestjs/common'
-import {TypeOrmModule} from '@nestjs/typeorm'
+import { Module } from '@nestjs/common';
+import { UsersService } from './users.service';
+import { UsersController } from './users.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserEntity } from './entities/user.entity';
 
-import {UserService} from './services/user.service'
-import {UserEntity} from './entities/user.entity'
-import {UserResolver} from './resolvers/user.resolver'
-
-/**
- * User module contain logic user entity
- */
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([UserEntity]),
-  ],
-  providers: [UserService, UserResolver],
-  exports: [UserService],
+  imports: [TypeOrmModule.forFeature([UserEntity])],
+  controllers: [UsersController],
+  providers: [UsersService],
 })
-export class UsersModule {
-}
+export class UsersModule {}
