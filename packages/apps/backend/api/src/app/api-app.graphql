@@ -5,5 +5,5 @@ scalar JSON
 scalar Upload
 
 type Query {
-    test: String
+  test: String
 }

@@ -40,8 +40,7 @@ console.log('DB_TYPE from env:', process.env.DB_HOST);
         autoLoadEntities: true,
         entities: [UserEntity],
         synchronize: true,
-      }
-    ),
+      }),
     }),
     // GraphQLModule.forRoot<ApolloDriverConfig>({
     //   driver: ApolloDriver,

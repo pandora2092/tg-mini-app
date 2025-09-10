@@ -4,16 +4,14 @@ import { environment } from '../environment';
 import { PlaceCategory } from '@packages/interfaces';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PlaceService {
-
-  constructor() { }
+  constructor() {}
 
   http = inject(HttpClient);
 
   getAllEventCategories() {
-    return this.http.get<PlaceCategory[]>(`${environment.apiBaseUrl}/place/categories`)
+    return this.http.get<PlaceCategory[]>(`${environment.apiBaseUrl}/place/categories`);
   }
-
 }

@@ -4,7 +4,7 @@
   "projectType": "application",
   "prefix": "app",
   "sourceRoot": "apps/admin/src",
-  "tags": ["scope:admin","type:app"],
+  "tags": ["scope:admin", "type:app"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",

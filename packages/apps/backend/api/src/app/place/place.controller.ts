@@ -1,9 +1,4 @@
-import {
-  Controller,
-  Get,
-  Body,
-  Param,
-} from '@nestjs/common';
+import { Controller, Get, Body, Param } from '@nestjs/common';
 import { PlaceService } from './place.service';
 import { PlaceCategoriesDto } from './dto/create-place.dto';
 
@@ -24,5 +19,4 @@ export class PlaceController {
   async getAllPlaceCategories(): Promise<PlaceCategoriesDto> {
     return this.placeService.getAllPlaceCategories();
   }
-
 }

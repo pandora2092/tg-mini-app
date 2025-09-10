@@ -3,11 +3,8 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/backend/api/src",
   "projectType": "application",
-  "tags": ["type:app","scope:backend-api"],
-  "assets": [
-    "apps/backend/api/src/assets",
-    "apps/backend/api/.env"
-  ],
+  "tags": ["type:app", "scope:backend-api"],
+  "assets": ["apps/backend/api/src/assets", "apps/backend/api/.env"],
   "targets": {
     "serve": {
       "executor": "@nx/js:node",

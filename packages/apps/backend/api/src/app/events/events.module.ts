@@ -6,6 +6,6 @@ import { HttpModule } from '@nestjs/axios';
 @Module({
   controllers: [EventsController],
   providers: [EventsService],
-  imports: [HttpModule]
+  imports: [HttpModule],
 })
 export class EventsModule {}

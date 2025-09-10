@@ -2,36 +2,35 @@
 /**
  * Import app params
  */
- 
-@import "utils";
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+
+@import 'utils';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
-@import "kudago";
+@import 'kudago';
 
 /****/
 
 .event-wrapper p {
-    font-family: PT Serif, Georgia, Times New Roman, Times, serif;
-    margin: 16px;
+  font-family: PT Serif, Georgia, Times New Roman, Times, serif;
+  margin: 16px;
 }
 
 .event-wrapper a {
-    color: #ee3942;
+  color: #ee3942;
 }
 
 .event-wrapper h2 {
-    font-size: 32px;
-    line-height: 1.1;
-    font-family: PT Sans, Arial, sans-serif;
-    font-weight: 700;
-    margin: 24px 0;
-    color: #2f3235;
+  font-size: 32px;
+  line-height: 1.1;
+  font-family: PT Sans, Arial, sans-serif;
+  font-weight: 700;
+  margin: 24px 0;
+  color: #2f3235;
 }
-
 
 /**
  * Import and generate bootstrap and angular.material theme

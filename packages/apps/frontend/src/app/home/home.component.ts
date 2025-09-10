@@ -9,7 +9,7 @@ export type City = {
   slug: string;
   name: string;
   image: string;
-}
+};
 
 @Component({
   selector: 'app-home',
@@ -19,37 +19,33 @@ export type City = {
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
- 
   cities = signal<City[]>([
     {
-      slug: "msk",
-      name: "Москва",
-      image: "../assets/msk.jpg"
+      slug: 'msk',
+      name: 'Москва',
+      image: '../assets/msk.jpg',
     },
     {
-      slug: "spb",
-      name: "Санкт-Петербург",
-      image: "../assets/spb.jpg"
+      slug: 'spb',
+      name: 'Санкт-Петербург',
+      image: '../assets/spb.jpg',
     },
     {
-      slug: "ekb",
-      name: "Екатеринбург",
-      image: "../assets/ekb.jpg"
+      slug: 'ekb',
+      name: 'Екатеринбург',
+      image: '../assets/ekb.jpg',
     },
     {
-      slug: "kzn",
-      name: "Казань",
-      image: "../assets/kzn.jpeg"
+      slug: 'kzn',
+      name: 'Казань',
+      image: '../assets/kzn.jpeg',
     },
     {
-      slug: "nnv",
-      name: "Нижний Новгород",
-      image: "../assets/nnv.jpg"
-    }
-  ])
- 
-  ngOnInit(): void {
-    
-  }
+      slug: 'nnv',
+      name: 'Нижний Новгород',
+      image: '../assets/nnv.jpg',
+    },
+  ]);
 
+  ngOnInit(): void {}
 }

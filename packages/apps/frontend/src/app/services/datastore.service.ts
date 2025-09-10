@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DatastoreService {
-
-  constructor() { 
-  }
+  constructor() {}
 
   private data = '';
 
-  setCategory (city: string) {
+  setCategory(city: string) {
     this.data = city;
   }
 

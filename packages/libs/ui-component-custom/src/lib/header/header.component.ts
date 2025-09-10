@@ -17,14 +17,16 @@ export class HeaderComponent {
   categories = signal<EventCategory[]>([]);
   eventsService = inject(EventsService);
 
-  city: string | null = "";
+  city: string | null = '';
 
   isMenuOpen = false;
 
-
-  constructor(private route: ActivatedRoute, private router: Router, private dataStore: DatastoreService){
-    this.city = this.route.snapshot.paramMap.get('city'); 
-      
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private dataStore: DatastoreService,
+  ) {
+    this.city = this.route.snapshot.paramMap.get('city');
   }
 
   ngOnInit(): void {
@@ -37,15 +39,13 @@ export class HeaderComponent {
     });
   }
 
-  goToCategory(category: string, name: string){
+  goToCategory(category: string, name: string) {
     this.router.navigate([this.city, category]);
     this.dataStore.setCategory(name);
     this.toggleMenu();
-
   }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
-
 }

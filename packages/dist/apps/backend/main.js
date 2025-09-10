@@ -100,7 +100,7 @@ const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
 let AppController = class AppController {
     getData() {
-        return { message: "Welcome" };
+        return { message: 'Welcome' };
     }
 };
 exports.AppController = AppController;
@@ -140,7 +140,7 @@ exports.ListModule = ListModule = tslib_1.__decorate([
     (0, common_1.Module)({
         providers: [list_service_1.ListService],
         controllers: [list_controller_1.ListController],
-        imports: [axios_1.HttpModule]
+        imports: [axios_1.HttpModule],
     })
 ], ListModule);
 
@@ -219,7 +219,7 @@ exports.EventsModule = EventsModule = tslib_1.__decorate([
     (0, common_1.Module)({
         controllers: [events_controller_1.EventsController],
         providers: [events_service_1.EventsService],
-        imports: [axios_1.HttpModule]
+        imports: [axios_1.HttpModule],
     })
 ], EventsModule);
 
@@ -236,8 +236,8 @@ const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
 const rxjs_1 = __webpack_require__(13);
 const axios_1 = __webpack_require__(10);
-const apiExternalUrl = "https://kudago.com";
-const actual_since = "1754905843";
+const apiExternalUrl = 'https://kudago.com';
+const actual_since = '1754905843';
 let EventsService = class EventsService {
     constructor(httpService) {
         this.httpService = httpService;
@@ -385,7 +385,7 @@ exports.PlaceModule = PlaceModule = tslib_1.__decorate([
     (0, common_1.Module)({
         controllers: [place_controller_1.PlaceController],
         providers: [place_service_1.PlaceService],
-        imports: [axios_1.HttpModule]
+        imports: [axios_1.HttpModule],
     })
 ], PlaceModule);
 
@@ -402,7 +402,7 @@ const tslib_1 = __webpack_require__(4);
 const common_1 = __webpack_require__(1);
 const axios_1 = __webpack_require__(10);
 const rxjs_1 = __webpack_require__(13);
-const apiExternalUrl = "https://kudago.com";
+const apiExternalUrl = 'https://kudago.com';
 let PlaceService = class PlaceService {
     constructor(httpService) {
         this.httpService = httpService;

@@ -14,26 +14,15 @@
             "depConstraints": [
               {
                 "sourceTag": "scope:backend-api",
-                "onlyDependOnLibsWithTags": [
-                  "scope:backend-api",
-                  "type:lib",
-                  "scope:shared"
-                ]
+                "onlyDependOnLibsWithTags": ["scope:backend-api", "type:lib", "scope:shared"]
               },
               {
                 "sourceTag": "scope:frontend",
-                "onlyDependOnLibsWithTags": [
-                  "scope:frontend",
-                  "type:lib", 
-                  "scope:shared"
-                ]
+                "onlyDependOnLibsWithTags": ["scope:frontend", "type:lib", "scope:shared"]
               },
               {
                 "sourceTag": "scope:admin",
-                "onlyDependOnLibsWithTags": [
-                  "scope:admin",
-                  "type:lib"
-                ]
+                "onlyDependOnLibsWithTags": ["scope:admin", "type:lib"]
               },
               {
                 "sourceTag": "lib-type:feature",
@@ -50,10 +39,7 @@
               },
               {
                 "sourceTag": "lib-type:data-access",
-                "onlyDependOnLibsWithTags": [
-                  "lib-type:data-access",
-                  "lib-type:utils"
-                ]
+                "onlyDependOnLibsWithTags": ["lib-type:data-access", "lib-type:utils"]
               },
               {
                 "sourceTag": "lib-type:utils",

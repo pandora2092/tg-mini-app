@@ -1,12 +1,15 @@
-
 <nav id="my-first">
   <ul>
     <li class="burger" (click)="toggleMenu()">
-      <i class="material-icons">{{ isMenuOpen ? "close" : "menu" }}</i>
+      <i class="material-icons">{{ isMenuOpen ? 'close' : 'menu' }}</i>
     </li>
     <li class="menu" [class.is-open]="isMenuOpen">
-      <a *ngFor="let category of categories()" (click)='goToCategory(category.slug, category.name)' ngClass="menu-item">
-       {{category.name}}
+      <a
+        *ngFor="let category of categories()"
+        (click)="goToCategory(category.slug, category.name)"
+        ngClass="menu-item"
+      >
+        {{ category.name }}
       </a>
     </li>
   </ul>

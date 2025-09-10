@@ -3,13 +3,10 @@ import { ListService } from './list.service';
 
 @Controller('list')
 export class ListController {
+  constructor(private readonly listService: ListService) {}
 
-    constructor(private readonly listService: ListService) {}
-
-
-    // @Get()
-    // getAll() {
-    //     return "test";
-    // }
-
+  // @Get()
+  // getAll() {
+  //     return "test";
+  // }
 }

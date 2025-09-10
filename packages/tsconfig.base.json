@@ -17,9 +17,7 @@
     "paths": {
       "@packages/interfaces": ["libs/shared/data-access/src/index.ts"],
       "@packages/shared/services": ["libs/shared/services/src/index.ts"],
-      "@packages/shared/shared-services": [
-        "libs/shared/shared-services/src/index.ts"
-      ],
+      "@packages/shared/shared-services": ["libs/shared/shared-services/src/index.ts"],
       "@packages/ui-component-custom": ["libs/ui-component-custom/src/index.ts"]
     }
   },

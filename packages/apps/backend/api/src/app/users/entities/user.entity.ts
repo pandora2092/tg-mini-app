@@ -6,17 +6,15 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-
 @Entity({ name: 'users' })
 export class UserEntity {
-  
   @PrimaryGeneratedColumn()
   id!: number;
 
   @Column({ type: 'varchar', unique: true })
   chatId!: string;
 
-  @Column({ type: 'varchar'})
+  @Column({ type: 'varchar' })
   username!: string;
 
   @Column({ type: 'boolean', default: false })

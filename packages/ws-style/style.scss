@@ -2,17 +2,16 @@
  * Import common variables, functions, mixins,
  * and placeholders
  */
-@import "utils";
+@import 'utils';
 
 /**
  * Import material and bootstrap default theme
  */
-@import "themes";
-
+@import 'themes';
 
 /*
  * Normalize default browser style
  */
-@import "base";
+@import 'base';
 
-@import "shame";
+@import 'shame';

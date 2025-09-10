@@ -11,8 +11,8 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
     provideHttpClient(withFetch()),
-    provideClientHydration(), 
+    provideClientHydration(),
     provideAnimationsAsync(),
-    {provide: MAT_DATE_LOCALE, useValue: 'ru-Ru'}
+    { provide: MAT_DATE_LOCALE, useValue: 'ru-Ru' },
   ],
 };
